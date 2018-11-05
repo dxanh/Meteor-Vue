@@ -12,4 +12,5 @@
     meteor create meteor-vue-app
     
 ### Fire up the meteor app
+    cd meteor-vue-app
     meteor
