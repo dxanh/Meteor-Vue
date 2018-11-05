@@ -110,7 +110,7 @@ import {
     nativeScrollBehavior
 } from 'meteor/akryum:vue-router2'
 
-import routerDefs from 'client/routes.js'
+import routerDefs from '/client/routes.js'
 
 const routerFactory = new RouterFactory({
     mode: 'history',
@@ -272,7 +272,15 @@ Edit client/main.html
     <app></app>
 </body>
 ```
+Moving it to its own “config file”
+Create /client/configs/vuetify.config.js
+```js
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 
+Vue.use(Vuetify)
+```
 Edit client/main.js
 ```js
 import {
@@ -284,7 +292,7 @@ import Vue from "vue";
 import AppComponent from '/imports/ui/App.vue'
 
 import routerFactory from '/client/configs/router.config'
-import '/client.configs/vuetify.config'
+import '/client/configs/vuetify.config'
 
 Meteor.startup(() => {
   const router = routerFactory.create()
@@ -295,4 +303,23 @@ Meteor.startup(() => {
   }).$mount('app')
 })
 ```
+
+Run app
+
+    meteor
+ 
+
+## Install VueX
+
+    meteor npm i vuex
     
+Adding a “config file” for Vuex
+Create Create /client/configs/vuex.config.js
+```js
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+```
+Remove autopublish
+Add account base
