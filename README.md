@@ -76,7 +76,7 @@ Create /import/ui/App.vue
     <button @click="count()">Click me</button>
 
     <p>
-      You've clicked: {{ counter }} times.
+      You have clicked: {{ counter }} times.
     </p>
 
 </div>
