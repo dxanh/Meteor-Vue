@@ -1,29 +1,44 @@
 <template>
   <div>
-    <h1>{{ greeting }}!</h1>
 
-    <button @click="count()">Click me</button>
+    <v-list>
+      <v-list-tile v-for="item in items"
+                   :key="item._id._str">
+        <v-list-tile-title>
+          {{ item.name }}
+        </v-list-tile-title>
+        <v-list-tile-action>
+          {{ item.price | currency }}
+        </v-list-tile-action>
+      </v-list-tile>
+    </v-list>
 
-    <p>
-      You've clicked: {{ counter }} times.
-    </p>
+    <div>
+      {{ items.length }} items
+    </div>
+
   </div>
 </template>
 
-
 <script>
+import { Items } from '../api/items'
 export default {
-  data() {
-    return {
-      greeting: 'Hello World - Meteor-Vue-App',
-      counter: 0
+  filters: {
+    currency(value) {
+      if (!value) {
+        return ''
+      }
+      return `$ ${value}`
     }
   },
-  methods: {
-    count() {
-      this.counter++
+  data() {
+    return {}
+  },
+  methods: {},
+  meteor: {
+    items() {
+      return Items.find({}).fetch()
     }
   }
 }
 </script>
-
