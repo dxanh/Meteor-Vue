@@ -23,20 +23,11 @@ Start app using Vue + Meteor options
 ## Add vue support
 
     meteor npm i vue-meteor-tracker
-
-### Add vue component from akryum
-
     meteor add akryum:vue-component
-    
-### Add vue stylus support from akryum
-
     meteor add akryum:vue-stylus
-
-### Add vue router
-
     meteor add akryum:vue-router2
 
-### Remove Blaze support
+Remove Blaze support
 
     meteor remove blaze-html-templates
     
@@ -44,12 +35,12 @@ Start app using Vue + Meteor options
 
     meteor add static-html akryum:vue akryum:vue-component session
     
-Removing the Blaze “demo” app 
+Removing the Blaze “demo” app (/client/main.css, main.html)
 
 
 ## Installing Vue through npm
 
-    meteor npm i vue
+    meteor npm i vue@2.5.17
 
 ## Implements Vue
 
@@ -57,7 +48,7 @@ Edit client/main.js file
 
 ```js
 import {Meteor} from "meteor/meteor";
-import {Vue} from "vue";
+import Vue from "vue";
 
 import App from 'imports/ui/App.vue';
 
@@ -78,23 +69,36 @@ Create /import/ui/App.vue
 
 ```js
 <template>
-    <h1>{{ greeting }}</h1>
+<div>
+    <h1>{{ greeting }}!</h1>
+
+    <button @click="count()">Click me</button>
+
+    <p>
+      You've clicked: {{ counter }} times.
+    </p>
+
+</div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      greeting: "Hello World - My first Meteor-Vue-App"
+      greeting: "Hello World - Meteor-Vue-App",
+      counter: 0
     };
+  },
+  methods: {
+    count() {
+      this.counter++;
+    }
   }
 };
 </script>
 ```
-## Fire app
-    meteor
-## Using akryum’s vue version
-    meteor add akryum:vue
+
+
     
 
     
