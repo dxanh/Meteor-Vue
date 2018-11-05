@@ -68,6 +68,7 @@ App.vue component
 Create /import/ui/App.vue 
 
 ```js
+
 <template>
 <div>
     <h1>{{ greeting }}!</h1>
@@ -96,6 +97,7 @@ export default {
   }
 };
 </script>
+
 ```
 
 
