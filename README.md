@@ -91,7 +91,10 @@ export default {
 };
 </script>
 ```
-
+## Fire app
+    meteor
+## Using akryum’s vue version
+    meteor add akryum:vue
     
 
     
