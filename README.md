@@ -1,11 +1,15 @@
 # Meteor-Vue
 
-Featuring:
+## Installation
 
-Akryum’s Vue support packages (tracker, vuex, router…),
-Vuetify (Implementation of Google’s Material spec),
-Meteor accounts.
-
-Installing meteor
-
-curl https://install.meteor.com/ | sh
+    curl https://install.meteor.com/ | sh
+    
+## Creat app
+    mkdir Meteor-Vue
+    
+    cd Meteor-Vue
+    
+    meteor create meteor-vue-app
+    
+### Fire up the meteor app
+    meteor
